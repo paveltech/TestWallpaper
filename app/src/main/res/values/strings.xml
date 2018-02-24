@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TestWallpaper</string>
+    <string name="action_settings">Settings</string>
+    <string name="wallpaper_loading"> Wallpaper Loading</string>
+
+    <string name="wallpaper_applying">Applying</string>
+    <string name="wallpaper_apply_cancelled">Cancel</string>
+    <string name="got_dimension">Got dimension</string>
+    <string name="set_task_error">Set Task Error</string>
+    <string name="wallpaper_applied">Applyed</string>
+</resources>
