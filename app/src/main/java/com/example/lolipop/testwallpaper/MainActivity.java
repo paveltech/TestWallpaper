@@ -1,5 +1,6 @@
 package com.example.lolipop.testwallpaper;
 
+import android.content.Intent;
 import android.graphics.RectF;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.anim.test.ItemActivity;
 import com.example.lolipop.testwallpaper.com.pojo.Wallpaper;
 import com.tasks.WallpaperApplyTask;
 
@@ -31,11 +33,15 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
                 WallpaperApplyTask.prepare(MainActivity.this)
                         .wallpaper(wallpaper)
-                        .to(WallpaperApplyTask.Apply.HOMESCREEN)
+                        .to(WallpaperApplyTask.Apply.HOMESCREEN_LOCKSCREEN)
                         .start(AsyncTask.THREAD_POOL_EXECUTOR);
+                        */
 
+                Intent intent = new Intent(MainActivity.this , ItemActivity.class);
+                startActivity(intent);
             }
         });
     }

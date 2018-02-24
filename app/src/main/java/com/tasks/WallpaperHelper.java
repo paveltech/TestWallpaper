@@ -45,8 +45,6 @@ public class WallpaperHelper {
         }
     }
 
-
-
     public static ImageSize getTargetSize(@NonNull Context context) {
         Point point = WindowHelper.getScreenSize(context);
         int targetHeight = point.y;
@@ -68,7 +66,6 @@ public class WallpaperHelper {
     @Nullable
     public static RectF getScaledRectF(@Nullable RectF rectF, float heightFactor, float widthFactor) {
         if (rectF == null) return null;
-
         RectF scaledRectF = new RectF(rectF);
         scaledRectF.top *= heightFactor;
         scaledRectF.bottom *= heightFactor;

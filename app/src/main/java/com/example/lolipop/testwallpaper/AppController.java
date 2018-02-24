@@ -15,7 +15,6 @@ public class AppController extends Application {
     public static Context context;
     private static AppController mInstance;
 
-
     public static Context getContext() {
         return AppController.context;
     }
@@ -23,8 +22,6 @@ public class AppController extends Application {
     public static synchronized AppController getInstance() {
         return mInstance;
     }
-
-
 
     @Override
     public void onCreate() {

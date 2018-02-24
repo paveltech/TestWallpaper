@@ -136,7 +136,6 @@ public class Wallpaper {
         private ImageSize mDimensions;
 
 
-
         private Builder() {
             mId = -1;
             mSize = 0;

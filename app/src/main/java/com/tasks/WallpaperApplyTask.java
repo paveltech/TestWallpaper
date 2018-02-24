@@ -14,11 +14,9 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
-
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.WindowHelper;
-
 import com.danimahardhika.cafebar.CafeBar;
 import com.example.lolipop.testwallpaper.R;
 import com.example.lolipop.testwallpaper.com.pojo.Wallpaper;
@@ -248,7 +246,6 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
                         Log.d("Message", String.format(Locale.getDefault(), "loaded bitmap: %d x %d",
                                 loadedBitmap.getWidth(), loadedBitmap.getHeight()));
                         publishProgress();
-
                         Bitmap bitmap = loadedBitmap;
                         if (!com.util.Preferences.get(mContext.get()).isCropWallpaper()) {
                         } else {

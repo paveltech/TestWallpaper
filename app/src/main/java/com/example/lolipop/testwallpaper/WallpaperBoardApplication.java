@@ -41,8 +41,6 @@ public abstract class WallpaperBoardApplication extends Application  {
 
         if (!ImageLoader.getInstance().isInited())
             ImageLoader.getInstance().init(ImageConfig.getImageLoaderConfiguration(this));
-
-
     }
 
     public static WallpaperBoardConfiguration getConfig() {

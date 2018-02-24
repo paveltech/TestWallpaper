@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-
     <application
         android:name=".AppController"
         android:allowBackup="true"
@@ -30,6 +29,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.anim.test.ItemActivity"
+            android:label="@string/title_activity_item"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.anim.test.ImageShowActivity"
+            android:label="@string/title_activity_image_show"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

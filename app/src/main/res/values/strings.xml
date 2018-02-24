@@ -8,4 +8,6 @@
     <string name="got_dimension">Got dimension</string>
     <string name="set_task_error">Set Task Error</string>
     <string name="wallpaper_applied">Applyed</string>
+    <string name="title_activity_item">ItemActivity</string>
+    <string name="title_activity_image_show">ImageShowActivity</string>
 </resources>
