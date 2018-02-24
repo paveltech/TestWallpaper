@@ -1,6 +1,8 @@
 package com.anim.test;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -11,8 +13,10 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.lolipop.testwallpaper.R;
+import com.kogitune.activitytransition.ActivityTransitionLauncher;
 import com.util.Preferences;
 
 import java.util.ArrayList;
@@ -21,7 +25,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ItemActivity extends AppCompatActivity {
+public class ItemActivity extends AppCompatActivity{
 
     @BindView(R.id.main_recycler)
     RecyclerView recyclerView;
