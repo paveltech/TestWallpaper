@@ -1,10 +1,13 @@
 package com.anim.test;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by lolipop on 2/25/2018.
  */
 
-public class Items {
+public class Items implements Parcelable{
 
     public int id;
     public String link;
@@ -13,6 +16,23 @@ public class Items {
 
     }
 
+
+    protected Items(Parcel in) {
+        id = in.readInt();
+        link = in.readString();
+    }
+
+    public static final Creator<Items> CREATOR = new Creator<Items>() {
+        @Override
+        public Items createFromParcel(Parcel in) {
+            return new Items(in);
+        }
+
+        @Override
+        public Items[] newArray(int size) {
+            return new Items[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -37,4 +57,14 @@ public class Items {
         this.link = link;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(link);
+    }
 }
