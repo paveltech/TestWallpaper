@@ -40,8 +40,10 @@ public class MainActivity extends AppCompatActivity {
                         .start(AsyncTask.THREAD_POOL_EXECUTOR);
                         */
 
-                Intent intent = new Intent(MainActivity.this , ItemActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(MainActivity.this , ItemActivity.class);
+                //startActivity(intent);
+
+                WallpaperDownloader.prepare(getApplicationContext()).wallpaper(wallpaper).start();
             }
         });
     }

@@ -26,7 +26,7 @@ import com.databse.DatabaseManager;
 import com.example.lolipop.testwallpaper.R;
 
 
-
+import com.example.lolipop.testwallpaper.WallpaperDownloader;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.squareup.picasso.Picasso;
@@ -110,6 +110,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.CustomViewHold
         ImageView love;
         CardView cardView;
         View view;
+        @BindView(R.id.download)
+        ImageView download;
 
 
 
@@ -121,6 +123,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.CustomViewHold
             cardView = (CardView) itemView.findViewById(R.id.card);
             love = (ImageView) itemView.findViewById(R.id.favorite);
             love.setOnClickListener(this);
+            download.setOnClickListener(this);
         }
 
         @Override
@@ -139,6 +142,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.CustomViewHold
                     setFavorite(love, Color.WHITE, position, true, true);
                     databaseManager.addIntoDatabase(items.getLink() , items.getId());
                 }
+
+            } else if (id == R.id.download){
 
             }
 

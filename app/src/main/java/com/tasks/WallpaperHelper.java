@@ -1,5 +1,6 @@
 package com.tasks;
 
+import android.app.DownloadManager;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Point;
@@ -12,7 +13,10 @@ import android.support.annotation.Nullable;
 import com.danimahardhika.android.helpers.core.FileHelper;
 import com.danimahardhika.android.helpers.core.WindowHelper;
 
+import com.example.lolipop.testwallpaper.R;
+import com.example.lolipop.testwallpaper.com.pojo.Wallpaper;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
+import com.util.Preferences;
 
 
 import java.io.File;
@@ -63,6 +67,32 @@ public class WallpaperHelper {
         return new ImageSize(targetWidth, targetHeight);
     }
 
+    public static boolean isWallpaperSaved(@NonNull Context context, @NonNull Wallpaper wallpaper) {
+        String fileName = wallpaper.getName() +"."+ getFormat(wallpaper.getMimeType());
+        File directory = getDefaultWallpapersDirectory(context);
+        File target = new File(directory, fileName);
+
+        if (target.exists()) {
+            long size = target.length();
+            return size == wallpaper.getSize();
+        }
+        return false;
+    }
+
+
+    public static File getDefaultWallpapersDirectory(@NonNull Context context) {
+        try {
+            if (Preferences.get(context).getWallsDirectory().length() == 0) {
+                return new File(Environment.getExternalStoragePublicDirectory(
+                        Environment.DIRECTORY_PICTURES) +"/"+
+                        context.getResources().getString(R.string.app_name));
+            }
+            return new File(Preferences.get(context).getWallsDirectory());
+        } catch (Exception e) {
+            return new File(context.getFilesDir().toString() +"/Pictures/"+
+                    context.getResources().getString(R.string.app_name));
+        }
+    }
     @Nullable
     public static RectF getScaledRectF(@Nullable RectF rectF, float heightFactor, float widthFactor) {
         if (rectF == null) return null;
