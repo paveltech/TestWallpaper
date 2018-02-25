@@ -22,6 +22,11 @@ public class Items implements Parcelable{
         link = in.readString();
     }
 
+
+    public Items(String link){
+        this.link = link;
+    }
+
     public static final Creator<Items> CREATOR = new Creator<Items>() {
         @Override
         public Items createFromParcel(Parcel in) {
@@ -67,4 +72,20 @@ public class Items implements Parcelable{
         dest.writeInt(id);
         dest.writeString(link);
     }
+
+    @Override
+    public boolean equals(final Object obj) {
+
+        // If passed object is an instance of Blacklist, then compare the phone numbers, else return false as they are not equal
+        if (obj.getClass().isInstance(new Items())) {
+            // Cast the object to Blacklist
+            final Items bl = (Items) obj;
+
+            // Compare whether the phone numbers are same, if yes, it defines the objects are equal
+            if (bl.link.equalsIgnoreCase(this.link))
+                return true;
+        }
+        return false;
+    }
+
 }

@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import android.widget.ImageView;
-
 import com.example.lolipop.testwallpaper.R;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -18,12 +17,8 @@ import butterknife.ButterKnife;
 
 public class ImageShowActivity extends AppCompatActivity {
 
-
-
-
     @BindView(R.id.image_show)
     ImageView imageView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +40,7 @@ public class ImageShowActivity extends AppCompatActivity {
         }
 
         Picasso.with(this)
-                .load("https://wallpaperbrowse.com/media/images/p02l56j9.jpg")
+                .load(imageUrl)
                 .noFade()
                 .into(imageView, new Callback() {
                     @Override
@@ -58,7 +53,6 @@ public class ImageShowActivity extends AppCompatActivity {
                         supportStartPostponedEnterTransition();
                     }
                 });
-
     }
 
 }
